@@ -6,8 +6,8 @@ module MyEnumerable
   end
 
   def any?
-    output = false
-    each { |e| output = true if yield e } if block_given?
+    output = true
+    each { |e| output = false if yield e } if block_given?
     output
   end
 
